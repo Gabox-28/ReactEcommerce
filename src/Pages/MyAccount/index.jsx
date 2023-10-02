@@ -1,8 +1,10 @@
+import {Layout} from "../../Components/Layout/index.jsx";
+
 function MyAccount(){
   return(
-    <div>
-      My account
-    </div>
+    <Layout>
+      My Account
+    </Layout>
   )
 }
 

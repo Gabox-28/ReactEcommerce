@@ -1,8 +1,10 @@
+import {Layout} from "../../Components/Layout/index.jsx";
+
 function SingIn(){
   return(
-    <div>
+    <Layout>
       Sign in
-    </div>
+    </Layout>
   )
 }
 
