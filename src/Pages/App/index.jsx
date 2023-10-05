@@ -8,7 +8,6 @@ import {NotFound} from "../NotFound/index.jsx";
 import {SingIn} from "../SingIn/index.jsx";
 import {Navbar} from "../../Components/Navbar/index.jsx";
 import {ShoppingCartProvider} from "../../context/index.jsx";
-import {ProductDetail} from "../../Components/ProductDetail/index.jsx";
 
 const AppRoutes = () => {
   const routes = useRoutes([

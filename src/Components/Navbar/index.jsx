@@ -62,9 +62,12 @@ function Navbar(){
             isActive ? activeStyle : undefined
           }>Sign in</NavLink>
         </li>
-        <li className={'flex gap-1'}>
+        <li className={'flex gap-1 cursor-pointer'} onClick={() => {
+          context.openCheckoutSideMenu()
+          context.closeProductDetail()
+        }}>
           <ShoppingCartIcon className={'w-5 h-5 text-black'}/>
-          <span>{context.count}</span>
+          <span>{context.cartProducts.length}</span>
         </li>
       </ul>
     </nav>
