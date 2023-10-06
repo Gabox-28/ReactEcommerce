@@ -1,12 +1,12 @@
 import {Layout} from "../../Components/Layout/index.jsx";
 import {useContext} from "react";
-import {ShoppingCartContext} from "../../context/index.jsx";
+import {ShopContext} from "../../context/index.jsx";
 import {Link} from "react-router-dom";
 import {OrdersCard} from "../../Components/OrdersCard/index.jsx";
 import {ChevronLeftIcon} from "@heroicons/react/24/solid/index.js";
 
 function MyOrders(){
-  const context = useContext(ShoppingCartContext)
+  const context = useContext(ShopContext)
   return(
     <Layout>
       <div className={'flex items-center justify-center relative w-80'}>

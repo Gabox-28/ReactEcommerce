@@ -1,12 +1,12 @@
 import {XMarkIcon} from "@heroicons/react/24/solid/index.js";
 import {useContext} from "react";
 import {Link} from "react-router-dom";
-import {ShoppingCartContext} from "../../context/index.jsx";
+import {ShopContext} from "../../context/index.jsx";
 import {OrderCard} from "../OrderCard/index.jsx";
 import {TotalPrice, GetDate} from "../../Utils/index.js";
 
 function CheckoutSideMenu(){
-  const context = useContext(ShoppingCartContext)
+  const context = useContext(ShopContext)
 
   const handleDelete = (id) => {
     const filteredProducts = context.cartProducts.filter(product => product.id !== id)

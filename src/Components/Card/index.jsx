@@ -1,10 +1,10 @@
 import {useContext} from "react";
-import {ShoppingCartContext} from "../../context/index.jsx";
+import {ShopContext} from "../../context/index.jsx";
 import {CheckIcon, PlusIcon} from "@heroicons/react/24/solid/index.js";
 import {data} from "autoprefixer";
 
 function Card({id, title, price, images, category : {name} }){
-  const context = useContext(ShoppingCartContext)
+  const context = useContext(ShopContext)
 
   const showProduct = (title, price, images, name) => {
     context.openProductDetail()
