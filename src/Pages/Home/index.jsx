@@ -8,25 +8,18 @@ function Home(){
   const context = useContext(ShopContext)
 
   function RenderView () {
-    if(context.searchByTitle?.length > 0){
-      if(context.filteredItems?.length > 0){
-        return (
-          context.filteredItems?.map((item) =>
-            <Card key={item.id} {...item}/>
-          )
-        )
-      }else{
-        return (
-          <div>We don't have anything :(</div>
-        )
-      }
-    }else{
-      return(
-        context.items?.map((item) =>
-          <Card key={item.id} {...item}/>
-        )
-      )
+    const itemsToRender = context.searchByTitle?.length > 0
+      ? context.filteredItems
+      : context.items;
+
+    if (itemsToRender?.length > 0) {
+      return itemsToRender.map(item => (
+        <Card key={item.id} {...item} />
+      ));
+    }else {
+      return <p>We don't have anything :(</p>;
     }
+    
   }
 
   return(
