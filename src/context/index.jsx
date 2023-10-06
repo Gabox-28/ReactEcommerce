@@ -15,9 +15,9 @@ function ShoppingCartProvider({children}){
   const [searchByTitle, setSearchByTitle] = useState(null)
 
   useEffect(() => {
-    fetch('https://api.escuelajs.co/api/v1/products')
-      .then(response => response.json())
-      .then(data => setItems(data))
+      fetch('https://api.escuelajs.co/api/v1/products')
+        .then(response => response.json())
+        .then(data => setItems(data))
   }, []);
 
   function filterItemsByTitle(items, searchByTitle){

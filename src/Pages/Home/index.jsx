@@ -6,20 +6,47 @@ import {ShopContext} from "../../context/index.jsx";
 
 function Home(){
   const context = useContext(ShopContext)
+  const currentPath = window.location.pathname
+  let category = currentPath.substring(currentPath.lastIndexOf('/') + 1)
+  function RenderItems () {
 
-  function RenderView () {
-    const itemsToRender = context.searchByTitle?.length > 0
-      ? context.filteredItems
-      : context.items;
+    let itemsToRender
+
+    if (category){
+      if(category === 'clothes'){
+        itemsToRender = context.searchByTitle?.length > 0
+          ? context.filteredItems?.filter(item => item.category.name === 'Electrónica')
+          : context.items.filter(item => item.category.name === 'Electrónica')
+      }else if(category === 'electronics'){
+        itemsToRender = context.searchByTitle?.length > 0
+          ? context.filteredItems?.filter(item => item.category.name === 'Electrónica')
+          : context.items.filter(item => item.category.name === 'Electrónica')
+      }else if(category === 'furnitures'){
+        itemsToRender = context.searchByTitle?.length > 0
+          ? context.filteredItems?.filter(item => item.category.name === 'Electrónica')
+          : context.items.filter(item => item.category.name === 'Electrónica')
+      }else if(category === 'toys'){
+        itemsToRender = context.searchByTitle?.length > 0
+          ? context.filteredItems?.filter(item => item.category.name === 'Electrónica')
+          : context.items.filter(item => item.category.name === 'Electrónica')
+      }else if(category === 'others'){
+        itemsToRender = context.searchByTitle?.length > 0
+          ? context.filteredItems?.filter(item => item.category.name === 'Electrónica')
+          : context.items.filter(item => item.category.name === 'Electrónica')
+      }
+    }else{
+      itemsToRender = context.searchByTitle?.length > 0
+        ? context.filteredItems
+        : context.items;
+    }
 
     if (itemsToRender?.length > 0) {
-      return itemsToRender.map(item => (
-        <Card key={item.id} {...item} />
-      ));
+      return itemsToRender.map(item => {
+        return <Card key={item.id} {...item} />
+    })
     }else {
-      return <p>We don't have anything :(</p>;
+      return <p>We don't have anything :(</p>
     }
-    
   }
 
   return(
@@ -31,7 +58,7 @@ function Home(){
       onChange={(event) => context.setSearchByTitle(event.target.value)}/>
 
       <div className={'grid gap-4 grid-cols-4 w-full max-w-screen-lg'}>
-        {RenderView()}
+        {RenderItems()}
       </div>
       <ProductDetail/>
     </Layout>

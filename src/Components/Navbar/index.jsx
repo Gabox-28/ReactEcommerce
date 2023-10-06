@@ -13,7 +13,7 @@ function Navbar(){
           <NavLink to={'/'}>Shopi</NavLink>
         </li>
         <li>
-          <NavLink to={'/all'} className={({isActive}) =>
+          <NavLink to={'/'} className={({isActive}) =>
             isActive ? activeStyle : undefined
           }>All</NavLink>
         </li>
@@ -28,9 +28,9 @@ function Navbar(){
           }>Electronics</NavLink>
         </li>
         <li>
-          <NavLink to={'/fornitures'} className={({isActive}) =>
+          <NavLink to={'/furnitures'} className={({isActive}) =>
             isActive ? activeStyle : undefined
-          }>Fornitures</NavLink>
+          }>Furnitures</NavLink>
         </li>
         <li>
           <NavLink to={'/toys'} className={({isActive}) =>
